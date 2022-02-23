@@ -1,0 +1,10 @@
+{
+  "name": "devandtalent-training",
+  "version": "1.0.0",
+  "description": "Fully functional App with a CRUD API, database, auth, cool frontend to manage the information, etc. We call it Dev&Talent!",
+  "main": "index.js",
+  "repository": "https://github.com/aitor-segura/devandtalent-training.git",
+  "author": "Aitor Segura <sb_aitor@hotmail.com>",
+  "license": "MIT",
+  "private": false
+}
