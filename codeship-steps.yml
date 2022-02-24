@@ -9,4 +9,4 @@
 - name: deploy
   tag: master
   service: devandtalent-heroku-deployment
-  command: codeship_heroku deploy /deploy nodejs-express-todoapp
+  command: codeship_heroku deploy /deploy blooming-crag-47678
