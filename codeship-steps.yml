@@ -1,17 +1,21 @@
 - type: parallel
   steps:
     - name: lint
-      service: devandtalent-nodejs-training
+      service: app
       command: npm run lint
     - name: tests
-      service: devandtalent-nodejs-training
+      service: app
       command: npm test
-- name: Push Image
-  service: devandtalent-nodejs-training
-  type: push
-  image_name: registry.heroku.com/blooming-crag-47678/web
-  registry: registry.heroku.com
-  dockercfg_service: heroku-dockercfg-generator
-- name: Trigger Release
-  service: heroku-dockercfg-generator
-  command: heroku container:release --app blooming-crag-47678 web
+- service: heroku-deployment
+  command: codeship_heroku deploy /deploy devandtalent-training
+- service: heroku-deployment
+  command: heroku run --exit-code --app devandtalent-training -- bundle exec rake db:migrate
+#- name: Push Image
+#  service: app
+#  type: push
+#  image_name: registry.heroku.com/devandtalent-training/web
+#  registry: registry.heroku.com
+#  dockercfg_service: heroku-dockercfg-generator
+#- name: Trigger Release
+#  service: heroku-dockercfg-generator
+#  command: heroku container:release --app devandtalent-training web
