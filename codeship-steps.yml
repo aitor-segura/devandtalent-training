@@ -12,4 +12,4 @@
   command: codeship_heroku deploy /deploy blooming-crag-47678
 - name: Heroku Run Test
   service: devandtalent-heroku-deployment
-  command: heroku run --exit-code --app blooming-crag-47678 -- bundle exec rake db:migrate
+  command: heroku run --exit-code --app blooming-crag-47678
