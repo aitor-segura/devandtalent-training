@@ -2,11 +2,13 @@ devandtalent-nodejs-training:
   build: 
     context: .
     dockerfile: Dockerfile
-    image: aitor-segura/devandtalent-nodejs-training
+    image: registry.heroku.com/blooming-crag-47678/web
   depends_on:
     - postgres
   environment:
     DATABASE_URL: "postgres://aitor-segura@postgres/devandtalent"
+  encrypted_env_file:
+    - deployment.env.encrypted
 
 postgres:
   image: postgres:14.2-alpine
@@ -15,8 +17,7 @@ postgres:
     POSTGRES_USER: devandtalent
     POSTGRES_DB: devandtalent
 
-devandtalent-heroku-deployment:
-  image: codeship/heroku-deployment
+devandtalent-dockercfg-generator:
+  image: codeship/heroku-dockercfg-generator
+  add_docker: true
   encrypted_env_file: deployment.env.encrypted
-  volumes:
-    - ./:/deploy
