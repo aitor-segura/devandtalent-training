@@ -3,12 +3,12 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - '3000:3000'
     depends_on:
       - postgres
     environment:
       DATABASE_URL: postgress://aitor-segura@postgres/devandtalent
-  
+
   postgres:
     image: postgres:14.2-alpine
     environment:
