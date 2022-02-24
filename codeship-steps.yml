@@ -8,5 +8,5 @@
       command: npm test
 - name: deploy
   tag: master
-  service: codeship-heroku-deployment
+  service: devandtalent-heroku-deployment
   command: codeship_heroku deploy /deploy nodejs-express-todoapp
