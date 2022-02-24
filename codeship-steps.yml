@@ -9,9 +9,9 @@
 - name: Push Image
   service: devandtalent-nodejs-training
   type: push
-  image_name: aitor-segura/devandtalent-nodejs-training
+  image_name: registry.heroku.com/blooming-crag-47678/web
   registry: registry.heroku.com
   dockercfg_service: heroku-dockercfg-generator
 - name: Trigger Release
-  service: heroku-deployment
+  service: devandtalent-dockercfg-generator
   command: heroku container:release --app blooming-crag-47678 web
