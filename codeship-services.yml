@@ -1,0 +1,22 @@
+devandtalent-nodejs-training:
+  build: 
+    context: .
+    dockerfile: Dockerfile
+    image: aitor-segura/devandtalent-nodejs-training
+  depends_on:
+    - postgres
+  environment:
+    DATABASE_URL: "postgres://aitor-segura@postgres/devandtalent"
+
+postgres:
+  image: postgres:14.2-alpine
+  environment:
+    POSTGRES_USER: aitor-segura
+    POSTGRES_USER: devandtalent
+    POSTGRES_DB: devandtalent
+
+devandtalent-heroku-deployment:
+  image: codeship/heroku-deployment
+  encrypted_env_file: deployment.env.encrypted
+  volumes:
+    - ./:/deploy
