@@ -7,7 +7,8 @@ devandtalent-nodejs-training:
     - postgres
   environment:
     DATABASE_URL: "postgres://aitor-segura@postgres/devandtalent"
-  encrypted_env_file: deployment.env.encrypted
+  encrypted_env_file:
+    - deployment.env.encrypted
 
 postgres:
   image: postgres:14.2-alpine
@@ -16,7 +17,8 @@ postgres:
     POSTGRES_USER: devandtalent
     POSTGRES_DB: devandtalent
 
-devandtalent-dockercfg-generator:
+heroku-dockercfg-generator:
   image: codeship/heroku-dockercfg-generator
   add_docker: true
-  encrypted_env_file: deployment.env.encrypted
+  encrypted_env_file:
+    - deployment.env.encrypted
