@@ -6,16 +6,9 @@
     - name: tests
       service: app
       command: npm test
-- service: heroku-deployment
+- name: Heroku deploy
+  service: heroku-deployment
   command: codeship_heroku deploy /deploy devandtalent-training
-- service: heroku-deployment
-  command: heroku run --exit-code --app devandtalent-training -- bundle exec rake db:migrate
-#- name: Push Image
-#  service: app
-#  type: push
-#  image_name: registry.heroku.com/devandtalent-training/web
-#  registry: registry.heroku.com
-#  dockercfg_service: heroku-dockercfg-generator
-#- name: Trigger Release
-#  service: heroku-dockercfg-generator
-#  command: heroku container:release --app devandtalent-training web
+- name: Herokun run
+  service: heroku-deployment
+  command: heroku run --exit-code --app devandtalent-training
