@@ -11,7 +11,7 @@
   type: push
   image_name: registry.heroku.com/blooming-crag-47678/web
   registry: registry.heroku.com
-  dockercfg_service: heroku-dockercfg-generator
+  dockercfg_service: devandtalent-dockercfg-generator
 - name: Trigger Release
   service: devandtalent-dockercfg-generator
   command: heroku container:release --app blooming-crag-47678 web
