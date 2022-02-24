@@ -7,8 +7,6 @@ app:
     - postgres
   environment:
     DATABASE_URL: 'postgres://aitor-segura@postgres/devandtalent'
-  encrypted_env_file:
-    - deployment.env.encrypted
 
 postgres:
   image: postgres:14.2-alpine
