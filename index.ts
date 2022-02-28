@@ -1,5 +1,8 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import Rollbar from 'rollbar';
+
+dotenv.config();
 
 const rollbar = new Rollbar({
   accessToken: '98f8082144844f56a6d2e8448f982e90',
@@ -11,7 +14,6 @@ const app = express();
 
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hola Mundo!' });
-  rollbar.log('Hello world');
 });
 
 app.listen(80, () => {
