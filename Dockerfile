@@ -1,6 +1,6 @@
 FROM node:16.14-alpine
 
-EXPOSE 3000
+EXPOSE 80
 
 WORKDIR /usr/app
 
