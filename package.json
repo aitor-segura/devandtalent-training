@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "tsc",
-    "start": "tsc & node .",
+    "build": "rm -rf dist & tsc",
+    "start": "yarn build & tsc & node .",
     "dev": "tsc -w & nodemon .",
     "lint": "eslint --fix ./",
     "test": "jest"
