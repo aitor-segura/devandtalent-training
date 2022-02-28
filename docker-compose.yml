@@ -6,12 +6,10 @@ services:
       - '80:80'
     depends_on:
       - postgres
-    environment:
-      DATABASE_URL: postgress://aitor-segura@postgres/devandtalent
+    env_file: .env
 
   postgres:
     image: postgres:14.2-alpine
-    environment:
-      POSTGRES_USER: aitor-segura
-      POSTGRES_PASSWORD: devandtalent
-      POSTGRES_DB: devandtalent
+    env_file: .env
+    volumes:
+      - ./:/var/lib/postgresql

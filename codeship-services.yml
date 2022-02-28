@@ -5,19 +5,19 @@ app:
     image: registry.heroku.com/devandtalent-training/web
   depends_on:
     - postgres
-  environment:
-    DATABASE_URL: 'postgres://aitor-segura@postgres/devandtalent'
+  encrypted_env_file:
+    - deployment.env.encrypted
 
 postgres:
   image: postgres:14.2-alpine
-  environment:
-    POSTGRES_USER: aitor-segura
-    POSTGRES_PASSWORD: devandtalent
-    POSTGRES_DB: devandtalent
+  encrypted_env_file:
+    - deployment.env.encrypted
+  volumes:
+    - ./db
 
 heroku-deployment:
   image: codeship/heroku-deployment
   encrypted_env_file:
-    - heroku-deployment.env.encrypted
+    - deployment.env.encrypted
   volumes:
     - ./:/deploy
