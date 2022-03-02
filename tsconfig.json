@@ -10,11 +10,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "sourceMap": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "outDir": "dist",
     "skipLibCheck": true,
-    "paths": {}
+    "paths": {
+      "@config*": ["../config/*"],
+      "@infra/*": ["./infra/*"],
+      "@interfaces/*": ["./interfaces/*"],
+      "*": ["node_modules"]
+    }
   },
-  "include": ["**/*", ". babelrc"],
+  "include": ["src/**/*", "config/**/*", ".babelrc"],
   "exclude": ["node_modules", "dist", "__tests__"]
 }
