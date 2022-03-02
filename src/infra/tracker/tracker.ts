@@ -11,6 +11,7 @@ const tracker = ({ config, logger }): Tracker => {
   });
 
   const log: TrackerFn = (message) => {
+    rollbar.log(message);
     logger.log(message);
   };
 
