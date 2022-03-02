@@ -1,6 +1,6 @@
 FROM node:16.14-alpine
 
-EXPOSE 80
+EXPOSE ${NODE_ENV_PORT}
 
 WORKDIR /usr/app
 
