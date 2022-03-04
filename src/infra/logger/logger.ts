@@ -1,4 +1,4 @@
-import type { Logger, LoggerFn } from './index.d';
+import type { Logger, LoggerFn } from '.';
 import { AppEnvs } from '@config/env';
 import { createLogger, format, transports } from 'winston';
 

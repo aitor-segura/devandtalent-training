@@ -1,4 +1,4 @@
 import logger from './logger';
-export * from './index.d';
 
+export * from './types';
 export default logger;

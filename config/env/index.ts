@@ -1,4 +1,4 @@
 import config from './env';
-export * from './index.d';
+export * from './types';
 
 export default config;

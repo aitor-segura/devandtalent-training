@@ -1,4 +1,4 @@
-import type { AppConfig } from './index.d';
+import type { AppConfig } from '.';
 import 'dotenv/config';
 
 const config: AppConfig = {

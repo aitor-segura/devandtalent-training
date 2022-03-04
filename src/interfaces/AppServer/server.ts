@@ -1,10 +1,10 @@
-import type { AppServer } from './index.d';
+import type { AppServer } from '.';
 import { AppEnvs } from '@config/env';
 import express from 'express';
 import helmet from 'helmet';
 import compression from 'compression';
 
-const server = ({ config, tracker, containerMiddleware }): AppServer => {
+const server = ({ config, tracker, containerMiddleware }): AppServer => () => {
   const { [AppEnvs.Port]: port } = config.env;
 
   const app = express();

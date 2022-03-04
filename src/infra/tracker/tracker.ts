@@ -1,4 +1,4 @@
-import type { Tracker, TrackerFn } from './index.d';
+import type { Tracker, TrackerFn } from '.';
 import Rollbar from 'rollbar';
 
 const TRACKER_CRTIICAL_MESSAGE = 'App has stopped.';
