@@ -17,7 +17,7 @@ const tracker = ({ config, logger }): Tracker => {
 
   const error: TrackerFn = (message) => {
     rollbar.error(message);
-    logger.log(message); // todo: create new log method
+    logger.error(message); // todo: create new log method
   };
 
   const critic: TrackerFn = (message) => {
