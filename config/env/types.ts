@@ -4,6 +4,7 @@ export type AppConfig = {
 };
 
 export enum AppEnvs {
-  Env = 'NODE_ENV',
-  Port = 'NODE_ENV_PORT',
+  ENV = 'NODE_ENV',
+  PORT = 'NODE_ENV_PORT',
+  PERSISTENCE = 'NODE_ENV_PERSISTENCE',
 }
