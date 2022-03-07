@@ -1,0 +1,43 @@
+[
+  {
+    "id": "5b1c68f2-caca-4e30-b887-55a977cb9624",
+    "name": "Luke Skywalker",
+    "availability": "Available",
+    "email": "luke.skywalker@devandtalent.sw",
+    "country": "Tatooine"
+  },
+  {
+    "id": "1d7b7476-1782-4e46-a916-e556b1d9d0ed",
+    "name": "C-3PO",
+    "email": "c.3po@devandtalent.sw",
+    "country": "Tatooine"
+  },
+  {
+    "id": "3f85487b-0299-4944-8ce3-9ab1972743b8",
+    "name": "R2-D2",
+    "availability": "NonAvailable",
+    "email": "r2.d2@devandtalent.sw",
+    "country": "Naboo"
+  },
+  {
+    "id": "33a6453c-be5d-4b86-a80e-3ab30661266e",
+    "name": "Darth Vader",
+    "availability": "Available",
+    "email": "darth.vader@devandtalent.sw",
+    "country": "Tatooine"
+  },
+  {
+    "id": "b8c947be-e19d-474d-b832-20dc18c976c2",
+    "name": "Leia Organa",
+    "availability": "NonAvailable",
+    "email": "leia.organa@devandtalent.sw",
+    "country": "Alderaan"
+  },
+  {
+    "id": "18fa05b0-dc7f-424c-84cf-a2f62d0cee8d",
+    "name": "Owen Lars",
+    "availability": "Available",
+    "email": "owen.lars@devandtalent.sw",
+    "country": "Tatooine"
+  }
+]
