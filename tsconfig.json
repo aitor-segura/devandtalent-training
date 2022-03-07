@@ -16,8 +16,11 @@
     "skipLibCheck": true,
     "paths": {
       "@config/*": ["../config/*"],
+      "@application/*": ["./application/*"],
+      "@domain/*": ["./domain/*"],
       "@infra/*": ["./infra/*"],
       "@interfaces/*": ["./interfaces/*"],
+      "@helpers/*": ["./helpers/*"],
       "*": ["node_modules"]
     }
   },
