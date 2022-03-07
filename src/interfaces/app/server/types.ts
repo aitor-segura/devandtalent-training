@@ -1,0 +1,73 @@
+import { Express, Request, Response, NextFunction } from 'express';
+import HttpStatusCodes from 'http-status-codes';
+import { AppContainer } from '@infra/container';
+
+export type AppRequest = Request & { container: AppContainer };
+
+export type AppResponse<T = any> = Response<T>;
+
+export type AppServer = () => Express;
+
+export type AppMiddleware = (req: Request, res: Response, next: NextFunction) => void;
+
+export type AppCallbackRoute<T = any> = (
+  req: AppRequest,
+  res: AppResponse<any>,
+  next: NextFunction,
+) => Promise<void | AppResponse<T>>;
+
+export enum HttpStatus {
+  ACCEPTED = HttpStatusCodes.ACCEPTED,
+  BAD_GATEWAY = HttpStatusCodes.BAD_GATEWAY,
+  BAD_REQUEST = HttpStatusCodes.BAD_REQUEST,
+  CONFLICT = HttpStatusCodes.CONFLICT,
+  CONTINUE = HttpStatusCodes.CONTINUE,
+  CREATED = HttpStatusCodes.CREATED,
+  EXPECTATION_FAILED = HttpStatusCodes.EXPECTATION_FAILED,
+  FORBIDDEN = HttpStatusCodes.FORBIDDEN,
+  GATEWAY_TIMEOUT = HttpStatusCodes.GATEWAY_TIMEOUT,
+  GONE = HttpStatusCodes.GONE,
+  HTTP_VERSION_NOT_SUPPORTED = HttpStatusCodes.HTTP_VERSION_NOT_SUPPORTED,
+  IM_A_TEAPOT = HttpStatusCodes.IM_A_TEAPOT,
+  INSUFFICIENT_SPACE_ON_RESOURCE = HttpStatusCodes.INSUFFICIENT_SPACE_ON_RESOURCE,
+  INSUFFICIENT_STORAGE = HttpStatusCodes.INSUFFICIENT_STORAGE,
+  INTERNAL_SERVER_ERROR = HttpStatusCodes.INTERNAL_SERVER_ERROR,
+  LENGTH_REQUIRED = HttpStatusCodes.LENGTH_REQUIRED,
+  LOCKED = HttpStatusCodes.LOCKED,
+  METHOD_FAILURE = HttpStatusCodes.METHOD_FAILURE,
+  METHOD_NOT_ALLOWED = HttpStatusCodes.METHOD_NOT_ALLOWED,
+  MOVED_PERMANENTLY = HttpStatusCodes.MOVED_PERMANENTLY,
+  MOVED_TEMPORARILY = HttpStatusCodes.MOVED_TEMPORARILY,
+  MULTI_STATUS = HttpStatusCodes.MULTI_STATUS,
+  MULTIPLE_CHOICES = HttpStatusCodes.MULTIPLE_CHOICES,
+  NETWORK_AUTHENTICATION_REQUIRED = HttpStatusCodes.NETWORK_AUTHENTICATION_REQUIRED,
+  NO_CONTENT = HttpStatusCodes.NO_CONTENT,
+  NON_AUTHORITATIVE_INFORMATION = HttpStatusCodes.NON_AUTHORITATIVE_INFORMATION,
+  NOT_ACCEPTABLE = HttpStatusCodes.NOT_ACCEPTABLE,
+  NOT_FOUND = HttpStatusCodes.NOT_FOUND,
+  NOT_IMPLEMENTED = HttpStatusCodes.NOT_IMPLEMENTED,
+  NOT_MODIFIED = HttpStatusCodes.NOT_MODIFIED,
+  OK = HttpStatusCodes.OK,
+  PARTIAL_CONTENT = HttpStatusCodes.PARTIAL_CONTENT,
+  PAYMENT_REQUIRED = HttpStatusCodes.PAYMENT_REQUIRED,
+  PERMANENT_REDIRECT = HttpStatusCodes.PERMANENT_REDIRECT,
+  PRECONDITION_FAILED = HttpStatusCodes.PRECONDITION_FAILED,
+  PRECONDITION_REQUIRED = HttpStatusCodes.PRECONDITION_REQUIRED,
+  PROCESSING = HttpStatusCodes.PROCESSING,
+  PROXY_AUTHENTICATION_REQUIRED = HttpStatusCodes.PROXY_AUTHENTICATION_REQUIRED,
+  REQUEST_HEADER_FIELDS_TOO_LARGE = HttpStatusCodes.REQUEST_HEADER_FIELDS_TOO_LARGE,
+  REQUEST_TIMEOUT = HttpStatusCodes.REQUEST_TIMEOUT,
+  REQUEST_TOO_LONG = HttpStatusCodes.REQUEST_TOO_LONG,
+  REQUEST_URI_TOO_LONG = HttpStatusCodes.REQUEST_URI_TOO_LONG,
+  REQUESTED_RANGE_NOT_SATISFIABLE = HttpStatusCodes.REQUESTED_RANGE_NOT_SATISFIABLE,
+  RESET_CONTENT = HttpStatusCodes.RESET_CONTENT,
+  SEE_OTHER = HttpStatusCodes.SEE_OTHER,
+  SERVICE_UNAVAILABLE = HttpStatusCodes.SERVICE_UNAVAILABLE,
+  SWITCHING_PROTOCOLS = HttpStatusCodes.SWITCHING_PROTOCOLS,
+  TEMPORARY_REDIRECT = HttpStatusCodes.TEMPORARY_REDIRECT,
+  TOO_MANY_REQUESTS = HttpStatusCodes.TOO_MANY_REQUESTS,
+  UNAUTHORIZED = HttpStatusCodes.UNAUTHORIZED,
+  UNPROCESSABLE_ENTITY = HttpStatusCodes.UNPROCESSABLE_ENTITY,
+  UNSUPPORTED_MEDIA_TYPE = HttpStatusCodes.UNSUPPORTED_MEDIA_TYPE,
+  USE_PROXY = HttpStatusCodes.USE_PROXY,
+}
