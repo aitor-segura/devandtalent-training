@@ -15,12 +15,19 @@ const logger = ({ config }): Logger => {
     exitOnError: false,
   });
 
+  const template_log = `[${env[AppEnvs.ENV]}] :message:`;
+
   const log: LoggerFn = (message) => {
-    winston.info(`[${env[AppEnvs.Env]}] ${message}`);
+    winston.info(template_log.replace(':message:', message));
+  };
+
+  const error: LoggerFn = (message) => {
+    winston.error(template_log.replace(':message:', message));
   };
 
   return {
     log,
+    error,
   };
 };
 
